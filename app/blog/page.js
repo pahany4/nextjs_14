@@ -11,6 +11,7 @@ async function getData() {
   // здесь response.ok, response.status и т.д.
   //console.log(response)
 
+  if (!response.ok) throw new Error("Unable to fetch posts!")
   // здесь data
   return response.json()
 }
