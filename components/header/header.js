@@ -5,7 +5,7 @@ import {usePathname} from "next/navigation";
 import {useSessionContext} from "supertokens-auth-react/recipe/session";
 import {signOut} from "supertokens-auth-react/recipe/thirdpartypasswordless";
 
-export const Header = () => {
+export const Header = ({nav}) => {
   const sessionContext = useSessionContext();
 
   const pathname = usePathname()
@@ -23,9 +23,11 @@ export const Header = () => {
     pathname !== "/auth" ?
       <header className="p-5 z-10 w-full items-center justify-between font-mono text-sm lg:flex bg-gray-600">
         <nav className={"flex justify-center gap-5 w-fit m-auto text-white"}>
-          <Link href={"/"}>Главная</Link>
-          <Link href={"/blog"}>Блог</Link>
-          <Link href={"/about"}>О нас</Link>
+
+          {nav.map((item, i) => (
+            <Link key={i} href={item.url}>{item.title}</Link>
+          ))}
+
           {sessionContext.doesSessionExist && <button onClick={logoutClicked}>выйти</button>}
         </nav>
       </header>
