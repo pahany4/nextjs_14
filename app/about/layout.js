@@ -5,8 +5,8 @@ export default function AboutLayout({children}) {
     <div>
       <h1 className={"text-3xl font-bold"}>О нас</h1>
       <ul className={"flex gap-5"}>
-        <li className={"text-base font-bold"}><Link href={"/about/contacts"}>Контакты</Link></li>
-        <li className={"text-base font-bold"}><Link href={"/about/team"}>Команда</Link></li>
+        <li className={"text-base font-bold"}><Link prefetch={false} href={"/about/contacts"}>Контакты</Link></li>
+        <li className={"text-base font-bold"}><Link prefetch={false} href={"/about/team"}>Команда</Link></li>
       </ul>
       {children}
     </div>

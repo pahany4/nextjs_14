@@ -25,7 +25,7 @@ export const Header = ({nav}) => {
         <nav className={"flex justify-center gap-5 w-fit m-auto text-white"}>
 
           {nav.map((item, i) => (
-            <Link key={i} href={item.url}>{item.title}</Link>
+            <Link prefetch={false} key={i} href={item.url}>{item.title}</Link>
           ))}
 
           {sessionContext.doesSessionExist && <button onClick={logoutClicked}>выйти</button>}

@@ -26,7 +26,7 @@ export default async function Posts() {
       <ul>
         {posts.map(post => (
           <li key={post.id}>
-            <Link href={`/blog/${post.id}`}>{post.title}</Link>
+            <Link prefetch={false} href={`/blog/${post.id}`}>{post.title}</Link>
           </li>
         ))}
       </ul>
