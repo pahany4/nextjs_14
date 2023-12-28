@@ -1,7 +1,7 @@
 import './globals.css'
-import {Header} from "@/components/header/header";
 import {Footer} from "@/components/footer/footer";
 import {Providers} from "@/app/providers";
+import {HeaderServer} from "@components/header/header-server";
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,7 +13,7 @@ export default function RootLayout({children}) {
     <html lang="en">
     <body>
     <Providers>
-      <Header/>
+      <HeaderServer/>
       <main className="flex min-h-screen flex-col items-center justify-between px-24 py-5">
         {children}
       </main>
